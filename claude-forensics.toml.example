@@ -1,0 +1,10 @@
+# claude-forensics configuration
+[server]
+bind = "0.0.0.0"        # listen on all interfaces
+port = 8080
+data_dir = "./cf-data"  # cases, evidence copies and SQLite databases
+
+[auth]
+username = "analyst"
+# Plain text or argon2 hash generated with: claude-forensics hash-password
+password = "change-me"

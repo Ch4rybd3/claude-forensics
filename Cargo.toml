@@ -1,0 +1,39 @@
+[package]
+name = "claude-forensics"
+version = "0.1.0"
+edition = "2024"
+description = "DFIR web tool to ingest and analyze Claude Code / Claude Desktop artifacts"
+license = "MIT"
+repository = "https://github.com/Ch4rybd3/claude-forensics"
+readme = "README.md"
+keywords = ["forensics", "dfir", "incident-response", "claude", "triage"]
+categories = ["command-line-utilities", "web-programming::http-server"]
+
+[dependencies]
+anyhow = "1.0.104"
+argon2 = "0.6.0"
+axum = { version = "0.8.9", features = ["multipart"] }
+chrono = "0.4.45"
+clap = { version = "4.6.7", features = ["derive", "env"] }
+hex = "0.4.3"
+md-5 = "0.11.0"
+rand = "0.10.3"
+regex = "1.13.1"
+rusqlite = { version = "0.40.2", features = ["bundled"] }
+rusty-leveldb = "4.0.1"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+sevenz-rust2 = "0.24.0"
+sha1 = "0.11.0"
+sha2 = "0.11.1"
+subtle = "2.6.1"
+tokio = { version = "1.53.2", features = ["full"] }
+toml = "1.1.8"
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+walkdir = "2.5.0"
+zip = { version = "9.0.2", default-features = false, features = ["aes-crypto", "bzip2", "deflate", "deflate64", "lzma", "ppmd", "time", "xz"] }
+
+[profile.release]
+lto = "thin"
+strip = true
